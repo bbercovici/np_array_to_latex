@@ -41,7 +41,7 @@ def np_array_to_latex(X,filename,row_headers = None,column_headers = None,
         style = ''.join([str(num) for num in style])
         style = style + '|'
 
-        # Fetch the first two lines
+        # Write the first two lines
         f.write(r'\begin{tabular}{' + style + '}'+'\n')
         f.write(r'\hline ' + '\n')
 
