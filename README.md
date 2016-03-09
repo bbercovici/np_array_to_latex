@@ -1,5 +1,5 @@
 # np_array_to_latex
-**A python script that fetches np.arrays into Latex files**
+**A python script that dumps np.arrays into Latex files**
 
 Never again will you have to manually copy/paste values from your favorite Python IDE values thanks to this script!
   - np_array_to_latex.py contains the source code of the main script
