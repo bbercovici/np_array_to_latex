@@ -6,8 +6,8 @@ def np_array_to_latex(X,filename,row_headers = None,column_headers = None,
     By B.Bercovici (03/2016)
     Inputs:
     ------
-    X : (n-by-m np.array) numpy array to export
-    filename : (string) name of the while into which the converted 
+    X : (N_row-by-N_column np.array) numpy array to export
+    filename : (string) name of the file into which the converted 
     array is dumped (ex: filename = 'my_array' will result in my_array.tex)
     column_headers : (list of strings) column headers
     row_headers : (list of strings) row headers
