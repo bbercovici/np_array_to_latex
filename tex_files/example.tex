@@ -1,0 +1,38 @@
+\documentclass{report}
+\input{preamble.tex}
+
+\begin{document}
+\subsection*{np.array to bmatrix}
+\begin{equation}
+\mathbf{a} = \input{a_to_latex.tex}
+\end{equation}
+
+\subsection*{one-dimensional np.array to bmatrix}
+\begin{equation}
+\mathbf{b} = \input{b_to_latex_column.tex}
+\end{equation}
+\begin{equation}
+\mathbf{b}^T = \input{b_to_latex_row.tex}
+\end{equation}
+
+\subsection*{np.array to tabular}
+\begin{table}[H]
+\centering
+\input{c_to_latex_with_headers.tex}
+\caption{Two-dimensional tabular with row and column headers}
+\end{table}
+
+\begin{table}[H]
+\centering
+\input{c_to_latex_with_column_headers.tex}
+\caption{One-dimensional tabular with column headers only}
+\end{table}
+
+\begin{table}[H]
+\centering
+\input{c_to_latex_with_row_headers.tex}
+\caption{One-dimensional tabular with row headers only}
+\end{table}
+
+\end{document}
+

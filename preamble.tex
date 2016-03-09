@@ -1,0 +1,41 @@
+%\usepackage[latin1]{inputenc} 
+%\usepackage[T1]{fontenc}      
+\usepackage[english]{babel} 
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{subfig}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{fullpage}
+\usepackage{tikz}
+\usepackage{url}
+\usepackage{titlepic}
+
+\usepackage{amsmath}
+\usepackage{hyperref}
+\hypersetup{%
+    pdfborder = {0 0 0}
+}
+\newenvironment{mymathbox}
+{\par\smallskip\centering\begin{lrbox}{0}%
+\begin{minipage}[c]{0.8\textwidth}}
+{\end{minipage}\end{lrbox}%
+\framebox[0.6\textwidth]{\usebox{0}}%
+\par\medskip
+\ignorespacesafterend} 
+\definecolor{keywords}{RGB}{255,0,90}
+\definecolor{comments}{RGB}{0,0,113}
+\definecolor{red}{RGB}{255,0,0}
+\definecolor{green}{RGB}{0,150,0}
+ 
+\lstset{language=Python, 
+        basicstyle=\fontsize{8.5}{10.5}\ttfamily, 
+        keywordstyle=\color{keywords},
+        commentstyle=\color{comments},
+        stringstyle=\color{red},
+        showstringspaces=false,
+        identifierstyle=\color{green}}
+
