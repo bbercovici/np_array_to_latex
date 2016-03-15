@@ -75,7 +75,6 @@ def np_array_to_latex(X,filename,row_headers = None,column_headers = None,
 
     # Else the array is simply exported as a bmatrix
     else:
-        # Fetch the first two lines
         f.write(r'\begin{bmatrix}'+'\n')
         for i in range(N_row):
             for j in range(N_column):
