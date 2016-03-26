@@ -1,6 +1,6 @@
 import numpy as np
 def np_array_to_latex(X,filename,row_headers = None,column_headers = None,
- column = True):
+ column = True,type = 'f', decimals = 2, ante_decimals = 6):
     '''
     Exports the np.array provided as argument to a latex file that can be imported
     By B.Bercovici (03/2016)
@@ -13,8 +13,12 @@ def np_array_to_latex(X,filename,row_headers = None,column_headers = None,
     row_headers : (list of strings) row headers
     column : (boolean) True if one-dimensional arrays are displayed
     as column vectors, False otherwise
+    type : (string) Format type. 'f' for float or 'e' for scientific exponent notation
+    decimals : (integer) Number of decimals
+    ante_decimants : (integer) Number of ante-decimal digits
     '''
-
+    ## Format specifier
+    format_string = '{:' + str(ante_decimals) + '.' + str(decimals) + str(type) + '}'
     ## Check the size and extract dimensions
     if len(X.shape) == 1:
         X = np.array([X])
@@ -66,10 +70,14 @@ def np_array_to_latex(X,filename,row_headers = None,column_headers = None,
                     f.write(row_headers[i] + r' & ' )
                 # data is fetched to the array 
                 elif ( i != -1 and j != -1 and j != N_column - 1):
-                    f.write(str(X[i,j]) + r' & ')
+                    
+                    f.write(format_string.format(X[i,j]) + r' & ')
+                    # f.write(str(X[i,j]) + r' & ')
                 # when at the last data column, an end-of-line character is added
                 elif ( i != -1 and j != -1 and j == N_column - 1  ):
-                    f.write(str(X[i,j]) + r'\\' + '\n' +r'\hline ' + '\n' )
+                    # f.write(str(X[i,j]) + r'\\' + '\n' +r'\hline ' + '\n' )
+                    f.write(format_string.format(X[i,j]) + r'\\' + '\n' +r'\hline ' + '\n' )
+
         f.write(r'\end{tabular}')
 
 
@@ -79,11 +87,17 @@ def np_array_to_latex(X,filename,row_headers = None,column_headers = None,
         for i in range(N_row):
             for j in range(N_column):
                 if (j == N_column - 1 and N_row != 1):
-                    f.write(str(X[i,j]) + r'\\' + '\n' )
+                    # f.write(str(X[i,j]) + r'\\' + '\n' )
+                    f.write(format_string.format(X[i,j]) + r'\\' + '\n' )
+
                 elif (j == N_column - 1 and N_row == 1):
-                    f.write(str(X[i,j]) + '\n' )
+                    # f.write(str(X[i,j]) + '\n' )
+                    f.write(format_string.format(X[i,j]) + '\n' )
+
                 else:
-                    f.write(str(X[i,j]) + r' & ')
+                    # f.write(str(X[i,j]) + r' & ')
+                    f.write(format_string.format(X[i,j]) + r' & ')
+
         f.write(r'\end{bmatrix}')
 
     f.close() 
